@@ -28,14 +28,14 @@ Corpus tập trung vào một domain thống nhất nhưng có nhiều loại d�
 
 | # | Tên tài liệu                             | Nguồn (Source URL)                                                | Ngày lấy / Phiên bản    | Số ký tự sau clean | Metadata đã gán                                                                     |
 |---|------------------------------------------|-------------------------------------------------------------------|-------------------------|-------------------:|-------------------------------------------------------------------------------------|
-| 1 | Borrowing Books - Faculty                | https://library.georgetown.edu/policies/borrowing/materials/books | 2026-09-19 / not-stated |                287 | `audience=faculty`, `department=library`, `category=borrowing`, `language=en`       |
-| 2 | Borrowing Books - Undergraduate Students | https://library.georgetown.edu/policies/borrowing/materials/books | 2026-09-19 / not-stated |                174 | `audience=student`, `department=library`, `category=borrowing`, `language=en`       |
-| 3 | Borrowing Media                          | https://library.georgetown.edu/policies/borrowing/materials/media | 2026-09-19 / not-stated |               1192 | `audience=all`, `department=library`, `category=borrowing-media`, `language=en`     |
-| 4 | Course Reserves Information for Faculty  | https://library.georgetown.edu/course-reserves/faculty            | 2026-09-19 / not-stated |               3971 | `audience=faculty`, `department=library`, `category=course-reserves`, `language=en` |
-| 5 | Course Reserves Information for Students | https://library.georgetown.edu/course-reserves/students           | 2026-09-19 / not-stated |               1818 | `audience=student`, `department=library`, `category=course-reserves`, `language=en` |
-| 6 | Equipment Loans                          | https://library.georgetown.edu/equipment                          | 2026-09-19 / not-stated |               2259 | `audience=all`, `department=library`, `category=equipment`, `language=en`           |
-| 7 | Interlibrary and Consortium Loans        | https://library.georgetown.edu/loans                              | 2026-09-19 / not-stated |               3211 | `audience=all`, `department=library`, `category=interlibrary-loan`, `language=en`   |
-| 8 | Library Use Policies                     | https://library.georgetown.edu/policies/library-use               | 2026-09-19 / not-stated |               2110 | `audience=all`, `department=library`, `category=library-use`, `language=en`         |
+| 1 | Borrowing Books - Faculty                | https://library.georgetown.edu/policies/borrowing/materials/books | 2026-09-19 / not-stated |                704 | `audience=faculty`, `department=library`, `category=borrowing`, `language=en`       |
+| 2 | Borrowing Books - Undergraduate Students | https://library.georgetown.edu/policies/borrowing/materials/books | 2026-09-19 / not-stated |                478 | `audience=student`, `department=library`, `category=borrowing`, `language=en`       |
+| 3 | Borrowing Media                          | https://library.georgetown.edu/policies/borrowing/materials/media | 2026-09-19 / not-stated |                941 | `audience=all`, `department=library`, `category=borrowing-media`, `language=en`     |
+| 4 | Course Reserves Information for Faculty  | https://library.georgetown.edu/course-reserves/faculty            | 2026-09-19 / not-stated |               4389 | `audience=faculty`, `department=library`, `category=course-reserves`, `language=en` |
+| 5 | Course Reserves Information for Students | https://library.georgetown.edu/course-reserves/students           | 2026-09-19 / not-stated |               1802 | `audience=student`, `department=library`, `category=course-reserves`, `language=en` |
+| 6 | Equipment Loans                          | https://library.georgetown.edu/equipment                          | 2026-09-19 / not-stated |               2123 | `audience=all`, `department=library`, `category=equipment`, `language=en`           |
+| 7 | Interlibrary and Consortium Loans        | https://library.georgetown.edu/loans                              | 2026-09-19 / not-stated |               3242 | `audience=all`, `department=library`, `category=interlibrary-loan`, `language=en`   |
+| 8 | Library Use Policies                     | https://library.georgetown.edu/policies/library-use               | 2026-09-19 / not-stated |               2360 | `audience=all`, `department=library`, `category=library-use`, `language=en`         |
 
 **Cách chuẩn hóa corpus**
 
@@ -84,15 +84,15 @@ Baseline được chạy trên phần body đã loại YAML frontmatter với `c
 
 | Tài liệu                        | Chiến lược (Strategy)            | Số lượng Chunk | Độ dài trung bình |
 |---------------------------------|----------------------------------|---------------:|------------------:|
-| `course-reserves-student`       | FixedSizeChunker (`fixed_size`)  |              3 |             639.7 |
-| `course-reserves-student`       | SentenceChunker (`by_sentences`) |              7 |             257.9 |
-| `course-reserves-student`       | RecursiveChunker (`recursive`)   |              3 |             605.0 |
-| `equipment-loans`               | FixedSizeChunker (`fixed_size`)  |              4 |             602.2 |
-| `equipment-loans`               | SentenceChunker (`by_sentences`) |              9 |             248.6 |
-| `equipment-loans`               | RecursiveChunker (`recursive`)   |              4 |             563.2 |
-| `interlibrary-consortium-loans` | FixedSizeChunker (`fixed_size`)  |              5 |             682.6 |
-| `interlibrary-consortium-loans` | SentenceChunker (`by_sentences`) |              9 |             354.8 |
-| `interlibrary-consortium-loans` | RecursiveChunker (`recursive`)   |              6 |             533.8 |
+| `course-reserves-student`       | FixedSizeChunker (`fixed_size`)  |              3 |             634.0 |
+| `course-reserves-student`       | SentenceChunker (`by_sentences`) |              7 |             255.6 |
+| `course-reserves-student`       | RecursiveChunker (`recursive`)   |              3 |             599.3 |
+| `equipment-loans`               | FixedSizeChunker (`fixed_size`)  |              4 |             568.2 |
+| `equipment-loans`               | SentenceChunker (`by_sentences`) |              8 |             262.8 |
+| `equipment-loans`               | RecursiveChunker (`recursive`)   |              4 |             529.2 |
+| `interlibrary-consortium-loans` | FixedSizeChunker (`fixed_size`)  |              5 |             688.4 |
+| `interlibrary-consortium-loans` | SentenceChunker (`by_sentences`) |             10 |             322.0 |
+| `interlibrary-consortium-loans` | RecursiveChunker (`recursive`)   |              6 |             538.7 |
 
 **Nhận xét baseline**
 
@@ -134,17 +134,24 @@ Baseline được chạy trên phần body đã loại YAML frontmatter với `c
 
 ### So Sánh Giữa Các Thành Viên
 
-| Thành viên         | Chiến lược (Strategy)              | Điểm truy xuất (/10) | Điểm mạnh                                  | Điểm yếu                                                              |
-|--------------------|------------------------------------|---------------------:|--------------------------------------------|-----------------------------------------------------------------------|
-| Nguyễn Đức Danh    | Heading-aware + Recursive fallback |                <CP6> | Giữ cấu trúc section và heading context    | Có thể cần nhiều chunk khi một câu hỏi cần thông tin từ nhiều section |
-| Bùi Gia Chính      | Fixed-size                         |                <CP6> | Đơn giản, ổn định, dễ kiểm soát kích thước | Có thể cắt ngang ranh giới semantic                                   |
-| Lê Phan Việt Cường | Recursive                          |                <CP6> | Ưu tiên boundary tự nhiên                  | Không tận dụng trực tiếp heading hierarchy                            |
-| Nguyễn Quang Duy   | Sentence-based                     |                <CP6> | Giữ nguyên câu, chunk dễ đọc               | Có thể tạo nhiều chunk nhỏ                                            |
+| Thành viên         | Chiến lược (Strategy)              | Embedding backend                                             | Số chunk | Điểm truy xuất (/10) | Điểm mạnh                                                                                 | Điểm yếu / lưu ý                                                                                                                                                         |
+|--------------------|------------------------------------|---------------------------------------------------------------|---------:|---------------------:|-------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Nguyễn Đức Danh    | Heading-aware + Recursive fallback | `gemini-embedding-001`                                        |       36 |            **10/10** | Giữ heading/section context; 5/5 query có answer-bearing context trong top-3              | Q1 không filter bị faculty policy chiếm top-1; một số answer cần tổng hợp nhiều chunk                                                                                    |
+| Lê Phan Việt Cường | Recursive                          | `gemini-embedding-001`                                        |       39 |            **10/10** | Boundary tự nhiên; 5/5 query retrieval thành công; Q1 đúng top-1 ngay cả khi không filter | Không bảo toàn heading hierarchy tường minh                                                                                                                              |
+| Bùi Gia Chính      | Fixed-size                         | `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2` |       30 |             **8/10** | Đơn giản, ít chunk, Q1/Q2/Q4/Q5 retrieval tốt                                             | Q3 thất bại ở content level: lấy được `at least 1 day in advance` nhưng thiếu `Reserve this item`; embedding backend khác nên không phải controlled comparison hoàn toàn |
+| Nguyễn Quang Duy   | Sentence-based                     | Chưa nhận kết quả CP6                                         |        — |                    — | Strategy đã được phân công ở CP5                                                          | Chưa có benchmark result tại thời điểm tổng hợp báo cáo                                                                                                                  |
 
 **Chiến lược nào tốt nhất cho chủ đề này? Tại sao?**
 
-> **Điền sau CP6**, dựa trên kết quả benchmark bằng real semantic embeddings và relevance của chunk content, không dựa
-> trên mock embeddings.
+Trong các kết quả đã nhận, **Heading-aware + Recursive fallback** và **Recursive** cùng đạt **10/10**, nên chưa có cơ sở
+để tuyên bố một chiến lược duy nhất thắng tuyệt đối. Heading-aware phù hợp rõ với corpus policy Markdown vì giữ được
+heading/section context; Recursive lại cho kết quả rất cạnh tranh mà không cần phụ thuộc trực tiếp vào heading
+hierarchy.
+
+Fixed-size đạt **8/10** và failure ở Q3 cho thấy rủi ro của việc cắt theo kích thước: hai mẩu thông tin cần cho một gold
+answer có thể nằm ở các vùng khác nhau và không cùng xuất hiện trong top-3 context. Tuy nhiên, Fixed-size được chạy bằng
+`paraphrase-multilingual-MiniLM-L12-v2`, trong khi Danh và Cường dùng `gemini-embedding-001`, nên chênh lệch điểm không
+thể quy hoàn toàn cho chunking strategy.
 
 ---
 
@@ -157,7 +164,7 @@ Baseline được chạy trên phần body đã loại YAML frontmatter với `c
 
 | # | Câu hỏi (Query)                                                                   | Câu trả lời chuẩn (Gold Answer)                                                                                                                                       | Chunk/section chứa thông tin                                                                  |
 |---|-----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| 1 | How long can I borrow books?                                                      | Đối với undergraduate student: số sách không giới hạn và thời hạn mượn là 6 tuần.                                                                                     | `borrowing-books-undergraduate` - `## Georgetown Users`                                       |
+| 1 | How long can I borrow books? *(filter: `{"audience":"student"}`)*              | Đối với undergraduate student: số sách không giới hạn và thời hạn mượn là 6 tuần.                                                                                     | `borrowing-books-undergraduate` - `## Georgetown Users`                                       |
 | 2 | How many reserve items may a student borrow at one time?                          | Sinh viên được mượn tối đa 3 reserve items cùng một lúc.                                                                                                              | `course-reserves-student` - `## Book Reserves`                                                |
 | 3 | How do I request library equipment, and how far in advance must I reserve it?     | Từ trang thiết bị, chọn “Reserve this item”, đăng nhập tài khoản thư viện và gửi request; reservation phải được thực hiện ít nhất 1 ngày trước.                       | `equipment-loans` - `## Requesting Equipment` và `## Media Equipment Checkout / Reservations` |
 | 4 | How long do Interlibrary Loan requests usually take to arrive?                    | Thời gian giao trung bình của Interlibrary Loan là 7–14 ngày làm việc.                                                                                                | `interlibrary-consortium-loans` - `## Items from Other Locations`                             |
@@ -165,19 +172,34 @@ Baseline được chạy trên phần body đã loại YAML frontmatter với `c
 
 ### Tổng hợp chất lượng truy xuất của nhóm
 
-| # | Câu hỏi                                                                           | Chiến lược tốt nhất cho câu này | Có chunk liên quan trong top-3? | Ghi chú                                               |
-|---|-----------------------------------------------------------------------------------|---------------------------------|---------------------------------|-------------------------------------------------------|
-| 1 | How long can I borrow books?                                                      | CP6                             | CP6                             | Chạy A/B có và không có `audience=student`            |
-| 2 | How many reserve items may a student borrow at one time?                          | CP6                             | CP6                             | Chấm theo nội dung chunk, không chỉ theo `doc_id`     |
-| 3 | How do I request library equipment, and how far in advance must I reserve it?     | CP6                             | CP6                             | Gold answer nằm ở hai section khác nhau               |
-| 4 | How long do Interlibrary Loan requests usually take to arrive?                    | CP6                             | CP6                             | Cần chunk chứa chính xác thông tin 7–14 business days |
-| 5 | Where is food allowed in Lauinger Library, and what kinds of food are prohibited? | CP6                             | CP6                             | Cần chunk chứa cả location và ví dụ food bị cấm       |
+| #        | Câu hỏi                                                                           | Heading-aware (Danh) | Recursive (Cường) | Fixed-size (Chính) | Kết luận từ kết quả đã có                                                     |
+|----------|-----------------------------------------------------------------------------------|---------------------:|------------------:|-------------------:|-------------------------------------------------------------------------------|
+| 1        | How long can I borrow books?                                                      |                  2/2 |               2/2 |                2/2 | Cả ba strategy lấy được answer; tác động metadata khác nhau giữa các strategy |
+| 2        | How many reserve items may a student borrow at one time?                          |                  2/2 |               2/2 |                2/2 | Cả ba lấy được answer-bearing chunk                                           |
+| 3        | How do I request library equipment, and how far in advance must I reserve it?     |                  2/2 |               2/2 |            **0/2** | Fixed-size lấy đúng `doc_id` nhưng thiếu một answer marker trong top-3        |
+| 4        | How long do Interlibrary Loan requests usually take to arrive?                    |                  2/2 |               2/2 |                2/2 | Cả ba lấy đúng answer                                                         |
+| 5        | Where is food allowed in Lauinger Library, and what kinds of food are prohibited? |                  2/2 |               2/2 |                2/2 | Cả ba lấy đúng answer                                                         |
+| **Tổng** |                                                                                   |            **10/10** |         **10/10** |           **8/10** | Sentence-based chưa có kết quả                                                |
+
+**Failure case nổi bật — Fixed-size / Q3**
+
+Ở Q3, Fixed-size có `equipment-loans` trong top-3 nên nếu chỉ chấm theo `doc_id` sẽ bị coi nhầm là thành công. Tuy
+nhiên, context retrieved chỉ chứa marker `at least 1 day in advance` và thiếu `Reserve this item`, nên không đủ để trả
+lời đầy đủ gold answer. Đây là ví dụ trực tiếp cho cảnh báo của lab rằng **gold doc hit không đồng nghĩa answer-bearing
+chunk hit**.
 
 **Lọc bằng metadata có giúp ích không? Ở câu hỏi nào?**
 
-> **Đánh giá chính thức ở CP6.** Q1 được thiết kế để kiểm tra trực tiếp metadata filtering: corpus có borrowing policy
-> cho `student` và `faculty` với thời hạn khác nhau, nên chạy A/B giữa retrieval không filter và
-> `metadata_filter={"audience": "student"}` sẽ cho thấy filter có giúp loại tài liệu sai đối tượng hay không.
+Có, rõ nhất ở Q1 nhưng mức tác động phụ thuộc strategy. Với Heading-aware của Danh, khi **không filter**,
+`borrowing-books-faculty` đứng top-1 (`0.7067`) và `borrowing-books-undergraduate` đứng top-2 (`0.7045`). Khi dùng
+`metadata_filter={"audience": "student"}`, undergraduate policy trở thành top-1 và faculty policy bị loại khỏi candidate
+set.
+
+Với Recursive của Cường, undergraduate policy đã đứng top-1 ngay cả khi không filter (`0.7090`), còn faculty ở top-2
+(`0.6962`); filter không đổi top-1 nhưng vẫn tăng precision bằng cách loại tài liệu sai audience. Fixed-size của Chính
+cũng giữ undergraduate ở top-1 khi không filter. Như vậy metadata filtering vẫn hữu ích để ràng buộc candidate set,
+nhưng mức cải thiện ranking phụ thuộc vào chunking và embedding backend.
+
 
 ---
 
@@ -185,15 +207,35 @@ Baseline được chạy trên phần body đã loại YAML frontmatter với `c
 
 **Những phân tích (insights) hay nhất nhóm sẽ trình bày:**
 
-> [Điền sau CP6.]
+1. **Đúng `doc_id` chưa đủ.** Fixed-size ở Q3 có gold document trong top-3 nhưng context thiếu marker
+   `Reserve this item`, nên content-level evaluation cho 0/2. Đây là ví dụ rõ nhất về lý do phải chấm theo
+   answer-bearing chunk.
+2. **Metadata filtering có giá trị thực tế.** Ở Heading-aware Q1, không filter khiến faculty policy đứng top-1; filter
+   `audience=student` đưa undergraduate policy lên top-1. Với Recursive và Fixed-size, top-1 vốn đã đúng nhưng filter
+   vẫn tăng precision của candidate set.
+3. **Heading-aware và Recursive đều phù hợp policy corpus.** Hai strategy đã nhận kết quả đều đạt 10/10. Heading-aware
+   tận dụng cấu trúc tài liệu; Recursive giữ boundary tự nhiên mà không cần heading-specific logic.
+4. **Một answer có thể cần nhiều chunk.** Q3 và Q5 ở Heading-aware cần tổng hợp từ nhiều chunk liên tiếp, nên top-k
+   retrieval và agent grounding quan trọng hơn chỉ nhìn top-1.
+5. **So sánh strategy phải kiểm soát embedding backend.** Fixed-size hiện dùng MiniLM local còn Heading-aware/Recursive
+   dùng Gemini embedding; vì vậy chênh lệch 8/10 và 10/10 chỉ là quan sát trên các lượt chạy đã có, không phải bằng
+   chứng nhân quả tuyệt đối do chunking.
 
 **Bài học rút ra khi so sánh trong nhóm:**
 
-> [Điền sau CP6.]
+Chunking ảnh hưởng trực tiếp tới việc một answer-bearing span có được giữ nguyên trong cùng chunk hay không. Các
+strategy dựa trên boundary ngữ nghĩa như Heading-aware và Recursive cho kết quả ổn định trên corpus policy hiện tại. Tuy
+nhiên, metadata schema và embedding backend cũng tác động mạnh tới ranking, nên một benchmark công bằng cần giữ corpus,
+query, gold answer, top-k và embedding backend nhất quán.
 
 **Nếu làm lại, nhóm sẽ thay đổi gì trong chiến lược dữ liệu (data strategy)?**
 
-> [Điền sau CP6.]
+- Giữ `audience` ở mọi chunk vì filter đã chứng minh có ích trên Q1.
+- Giữ heading/section context trong policy documents.
+- Với Fixed-size, cân nhắc overlap lớn hơn hoặc neighboring-chunk retrieval để giảm lỗi như Q3.
+- Chuẩn hóa **một embedding backend duy nhất cho cả nhóm** trước khi benchmark để comparison chỉ phản ánh khác biệt
+  chunking.
+- Thêm answer markers/evidence strings ngay từ khi thiết kế benchmark để tránh chấm đúng chỉ vì `doc_id` trùng.
 
 ---
 
@@ -201,8 +243,8 @@ Baseline được chạy trên phần body đã loại YAML frontmatter với `c
 
 | Tiêu chí                                 | Điểm tự đánh giá |
 |------------------------------------------|-----------------:|
-| Lựa chọn tài liệu (Document Set Quality) |             / 10 |
-| Thiết kế chiến lược (Strategy Design)    |             / 15 |
-| Chất lượng truy xuất (Retrieval Quality) |             / 10 |
-| Thuyết trình (Demo)                      |              / 5 |
-| **Tổng phần nhóm**                       |         **/ 40** |
+| Lựa chọn tài liệu (Document Set Quality) |          10 / 10 |
+| Thiết kế chiến lược (Strategy Design)    |          13 / 15 |
+| Chất lượng truy xuất (Retrieval Quality) |           9 / 10 |
+| Thuyết trình (Demo)                      |            4 / 5 |
+| **Tổng phần nhóm**                       |      **36 / 40** |
