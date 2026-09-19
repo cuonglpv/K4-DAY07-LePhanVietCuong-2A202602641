@@ -1,0 +1,54 @@
+Strategy: fixed
+Embedding backend: gemini-embedding-001
+Loaded 35 chunks from data\library-policy
+
+[1] How long can I borrow books?
+  filter={'audience': 'student'}
+  gold=borrowing-books-undergraduate: Georgetown undergraduate students may borrow an unlimited number of books for 6 weeks.
+  rubric_score=2/2; gold_doc_rank=1; answer_marker_in_top3=True
+  1. score=0.7090 doc_id=borrowing-books-undergraduate | # Borrowing Books — Undergraduate Students | Patron type | Book limit | Loan period | |---|---:|---| | Georgetown undergraduate students | Unlimited | 6 weeks |
+  2. score=0.6969 doc_id=course-reserves-student | up to three reserve items at one time. Reserve book loan periods (2 Hours, 4 Hours, 24 Hours, or 3 Days) are set by the faculty member. They must be checked in then out at the Circ
+  3. score=0.6727 doc_id=course-reserves-student | l hour 3 day reserve books $2.00 for the first day overdue, $1.00 for each additional day A replacement fee of $200.00 will be assessed after a reserve item is 4 days overdue. This
+
+[1A/B unfiltered] How long can I borrow books?
+  filter=none
+  gold=borrowing-books-undergraduate: Georgetown undergraduate students may borrow an unlimited number of books for 6 weeks.
+  rubric_score=2/2; gold_doc_rank=1; answer_marker_in_top3=True
+  1. score=0.7090 doc_id=borrowing-books-undergraduate | # Borrowing Books — Undergraduate Students | Patron type | Book limit | Loan period | |---|---:|---| | Georgetown undergraduate students | Unlimited | 6 weeks |
+  2. score=0.6969 doc_id=course-reserves-student | up to three reserve items at one time. Reserve book loan periods (2 Hours, 4 Hours, 24 Hours, or 3 Days) are set by the faculty member. They must be checked in then out at the Circ
+  3. score=0.6962 doc_id=borrowing-books-faculty | # Borrowing Books — Faculty ## Georgetown faculty | Patron type | Book limit | Loan period | |---|---:|---| | Tenure, tenure-track, and retired faculty | Unlimited | Due January 31
+
+[2] How many reserve items may a student borrow at one time?
+  filter={'audience': 'student'}
+  gold=course-reserves-student: Students may borrow up to three reserve items at one time.
+  rubric_score=2/2; gold_doc_rank=1; answer_marker_in_top3=True
+  1. score=0.8749 doc_id=course-reserves-student | up to three reserve items at one time. Reserve book loan periods (2 Hours, 4 Hours, 24 Hours, or 3 Days) are set by the faculty member. They must be checked in then out at the Circ
+  2. score=0.8367 doc_id=course-reserves-student | # Course Reserves Information for Students Book Reserves Use the search bar above to look up physical books. You can search by the book’s title, the professor’s last name, or the c
+  3. score=0.7535 doc_id=course-reserves-student | l hour 3 day reserve books $2.00 for the first day overdue, $1.00 for each additional day A replacement fee of $200.00 will be assessed after a reserve item is 4 days overdue. This
+
+[3] How do I request library equipment, and how far in advance must I reserve it?
+  filter=none
+  gold=equipment-loans: Select Reserve this item from an equipment page, open HoyaSearch, and log in to make a request. Reservations must be made at least 1 day in advance.
+  rubric_score=2/2; gold_doc_rank=1; answer_marker_in_top3=True
+  1. score=0.8037 doc_id=equipment-loans | # Equipment Loans ## Requesting equipment From an equipment page, select **Reserve this item**, open HoyaSearch, and log in to a library account to make a request. Media Equipment 
+  2. score=0.7043 doc_id=equipment-loans | ckup location is the main Service Desk on the third floor of Lauinger Library. Most equipment can be checked out for up to 72 hours (3 days). Equipment must be returned at the fron
+  3. score=0.7019 doc_id=course-reserves-student | up to three reserve items at one time. Reserve book loan periods (2 Hours, 4 Hours, 24 Hours, or 3 Days) are set by the faculty member. They must be checked in then out at the Circ
+
+[4] How long do Interlibrary Loan requests usually take to arrive?
+  filter=none
+  gold=interlibrary-consortium-loans: Items designated Interlibrary Loan Request average 7–14 business days to arrive.
+  rubric_score=2/2; gold_doc_rank=1; answer_marker_in_top3=True
+  1. score=0.8123 doc_id=interlibrary-consortium-loans | Request" may be shipped from around the world or other parts of the country. Average delivery times for Interlibrary Loans are 7-14 business days. Recalls & Holds Hold Shelf Items 
+  2. score=0.7443 doc_id=interlibrary-consortium-loans | niversity Medical Center patrons (Dahlgren Memorial Library) ILL for Georgetown University Law Center patrons Questions about ILL for Georgetown Hilltop and Capitol Libraries? Emai
+  3. score=0.7145 doc_id=interlibrary-consortium-loans | vailable copy from another library and notify the requester if it is unavailable. ILL for Georgetown University Hilltop and Capitol Faculty, Students and Staff ILL for Georgetown U
+
+[5] Where is food allowed in Lauinger Library, and what kinds of food are prohibited?
+  filter=none
+  gold=library-use-policy: Food is allowed only on Lauinger Library's second floor. Pizza, hamburgers, fries, ice cream, hot subs, and other smelly, greasy, or messy foods are prohibited.
+  rubric_score=2/2; gold_doc_rank=1; answer_marker_in_top3=True
+  1. score=0.8701 doc_id=library-use-policy | ommer libraries. Food is allowed ONLY on the second floor of Lauinger Library. Food is prohibited on all other floors of the library. Examples of permitted food: cold sandwiches/wr
+  2. score=0.7979 doc_id=library-use-policy | lections on-site. General Policies Do not disturb the research and study of other users. Do not tamper with or damage University resources and property. Do not hamper the work of L
+  3. score=0.7348 doc_id=library-use-policy | is a violation of the Student Code of Conduct (#33). In accordance with the laws of the District of Columbia which prohibit smoking in public areas, members of the community who ch
+
+Total rubric proxy: 10/10
+Interpretation: the proxy requires both the gold document and answer markers; a gold doc_id alone is not treated as a correct retrieval.
